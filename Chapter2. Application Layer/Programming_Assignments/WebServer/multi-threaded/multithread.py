@@ -50,7 +50,7 @@ def handle_client(connectionSocket, addr):
 def main():
     serverPort = 12000
     serverSocket = socket(AF_INET, SOCK_STREAM)
-    # let the server reuse the same IP but different ports 
+    # Allow quick restart: let us bind() the same IP/port even if previous TCP connections are in TIME_WAIT.
     serverSocket.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
     serverSocket.bind(("", serverPort))
     serverSocket.listen(5)
