@@ -6,7 +6,6 @@ from _thread import start_new_thread
 lock = threading.Lock()
 print(gethostbyname(gethostname()))
 
-
 def handle_connection(connectionSocket):
     while True:
         try:
