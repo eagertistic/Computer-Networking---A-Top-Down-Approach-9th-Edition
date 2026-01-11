@@ -31,4 +31,6 @@ print("\n--- ping statistics ---")
 print(f"maximum rtt is: {max(rtts)}")
 print(f"minimum rtt is: {min(rtts)}")
 print(f"average rtt is: {round(sum(rtts)/len(rtts),3)}")
-print(f"{sent} packets transmitted, {received} received, {loss_pct:.1f}% packet loss")
+print(
+    f"{sent} packets transmitted, {received} received, {loss_pct:.1f}% packet loss"
+)
