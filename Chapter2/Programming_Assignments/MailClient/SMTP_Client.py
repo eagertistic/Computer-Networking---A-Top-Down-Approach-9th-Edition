@@ -4,17 +4,19 @@
 # It connects to a mail server and dialogue with the mail server using the SMTP protocol, and send an email message to the mail server
 
 import socket
+from pathlib import Path
 from datetime import datetime, UTC
 from email.utils import format_datetime
 import yaml
 import ssl
 import base64
 
+base_dir = Path(__file__).resolve().parent
+config_path = base_dir / "config.yaml"
+
 
 def send_email():
-    with open(
-            'C:\Users\jackp\Computer-Networking\Chapter2\Programming_Assignments\MailClient\config.yaml',
-            'r') as file:
+    with open(config_path, 'r') as file:
         config = yaml.safe_load(file)
 
     SMTP_config = config['SMTP']
